@@ -20,6 +20,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {  createAppContainer, createSwitchNavigator } from 'react-navigation';
 import firebase from 'react-native-firebase';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+// Icon.loadFont();
 // import BottomTabBar from 'react-navigation-selective-tab-bar';
 
 import MoreSplash from './MoreSplash'

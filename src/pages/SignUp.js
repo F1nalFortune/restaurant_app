@@ -134,7 +134,6 @@ export default class SignUp extends Component {
           <GeneralStatusBarColor backgroundColor="#345f3f"
                 barStyle="light-content"/>
           <SafeAreaView style={styles.container}>
-            <Logo />
             <View style={styles.container}>
               <TextInput
                 style={styles.inputBox}

@@ -90,7 +90,6 @@ target 'best_bet' do
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
   pod 'RNShare', :path => '../node_modules/react-native-share'
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
 

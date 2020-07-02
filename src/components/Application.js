@@ -40,6 +40,22 @@ import Login from '../pages/Login'
 import ForgotPassword from '../pages/ForgotPassword'
 import IntroSlider from '../pages/IntroSlider'
 
+function returnIconName(routeName){
+  let iconName;
+  if (routeName === 'Search') {
+    iconName = 'search';
+  } else if (routeName === 'BuddyList'){
+    iconName = 'address-book';
+  } else if (routeName === 'Profile') {
+    iconName = 'user-circle'
+  } else if (routeName ==='Favorites'){
+    iconName = 'bookmark';
+  } else if(routeName ==='More'){
+    iconName= 'bars';
+  }
+  return iconName;
+}
+
 function navigationOptions(title){
   var result = {
     title: title,
@@ -52,7 +68,7 @@ function navigationOptions(title){
     headerTintColor: '#fff',
     headerTitleStyle: {
       color: "#fff",
-      textShadowColor: "#66ff66",
+      textShadowColor: "#ff9980",
       textShadowOffset: {width: -1, height: 1},
       textShadowRadius: 10,
       shadowOpacity: .58,
@@ -106,6 +122,7 @@ export default class Application extends Component {
 
 
   render() {
+    console.disableYellowBox = true;
     const MoreStack = createStackNavigator({
       MoreSplash: {
         screen: MoreSplash,
@@ -163,7 +180,7 @@ export default class Application extends Component {
     },
     {
       defaultNavigationOptions: ({ navigation }) => ({
-        tabBarIcon: ({ focused, tintColor }) => {
+        tabBarIcon: ({ tintColor }) => {
           const { routeName } = navigation.state;
           let iconName;
           if (routeName === 'Search') {
@@ -177,14 +194,14 @@ export default class Application extends Component {
           } else if(routeName ==='More'){
             iconName= 'bars';
           }
-          return <Icon name={iconName} size={25} style={styles.glow}/>;
+          return <Icon name={iconName} size={25} style={{ color: tintColor }}/>;
         },
       }),
       tabBarOptions: {
-        activeTintColor: 'white',
-        inactiveTintColor: 'white',
-        inactiveBackgroundColor: 'black',
-        activeBackgroundColor: '#272727',
+        activeTintColor: 'red',
+        inactiveTintColor: 'black',
+        inactiveBackgroundColor: 'white',
+        activeBackgroundColor: 'white',
         style:{
           height: 65,
           zIndex: 1000
@@ -261,8 +278,8 @@ const styles = StyleSheet.create ({
     paddingBottom: 5
   },
   glow:{
-    color: "#fff",
-    textShadowColor: "#66ff66",
+    color: "#ffd6cc",
+    textShadowColor: "#ff9980",
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
     padding: 10
@@ -307,7 +324,7 @@ const styles = StyleSheet.create ({
     padding:10
   },
   titleWrapper:{
-    backgroundColor: 'black',
+    backgroundColor: 'green',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
